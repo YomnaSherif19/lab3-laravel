@@ -24,6 +24,18 @@ Route::get('/users/{id}/edit',[UserController::class,'edit'])->name('users.edit'
 Route::put('/users/{id}',[UserController::class,'update'])->name('users.update');
 Route::delete('/users/{id}',[UserController::class,'destroy'])->name('users.destroy');
 
+
+
+
+
+Route::get('/posts',[PostsController::class,'index'])->name('posts.index');
+Route::get('/posts/create',[PostsController::class,'create'])->name('posts.create');
+Route::get('/posts/{id}',[PostsController::class,'show'])->name('posts.show');
+Route::post('/posts',[PostsController::class,'store'])->name('posts.store');
+Route::get('/posts/{id}/edit',[PostsController::class,'edit'])->name('posts.edit');
+Route::put('/posts/{id}',[PostsController::class,'update'])->name('posts.update');
+Route::delete('/posts/{id}',[PostsController::class,'destroy'])->name('posts.destroy');
+Route::get('/posts/restore/{id}',[PostsController::class,'index'])->name('posts.restore');
 Route::fallback(
 function()
 {
